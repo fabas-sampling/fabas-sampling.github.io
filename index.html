@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="Neural representations for CFD simulation compression.">
+  <meta name="description" content="Neural representations for CFD simulation compression.">
   <meta name="keywords" content="Paper, website">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NeVF: Representing CFD simulations as neural flow volume fields for efficient compression, reconstruction, and analysis</title>
+  <title>NeVF: Representing CFD simulations as neural flow volume fields for efficient compression, reconstruction, and
+    analysis</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -22,15 +23,13 @@
     gtag('config', 'G-PYVRSFMDRL');
   </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
@@ -40,203 +39,165 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 </head>
+
 <body>
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">NeVF: Representing CFD simulations as neural flow volume fields for efficient compression, reconstruction, and analysis</h1>
-          <h1 style="font-size:1.5rem"> Computer-Aided Civil and Infrastructure Engineering</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://omaralv.com">Omar A. Mures</a><sup>1,2</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="author-block">
-              <a href="https://mcidmontoya.com/">Miguel Cid Montoya</a><sup>3</sup>
-          </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Universidade da Coru&ntilde;a</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="author-block"><sup>2</sup>CITIC</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="author-block"><sup>2</sup>Clemson University</span>
-          </div>
-
-          <div class="is-size-5 publication-authors" style="position: relative; z-index: -1;">
-            <sup>1</sup> <a href="https://www.udc.gal/"><img style="width:30%; margin-top: clamp(-160px, -10vw, 0px); vertical-align: middle; padding-right: 15px;" src="./static/images/udc.jpg"> </a>
-            <sup>2</sup> <a href="https://citic.udc.es/"><img style="width:20%; padding-right: 15px;" src="./static/images/citic.jpg"> </a>
-            <sup>3</sup> <a href="https://www.clemson.edu/"><img style="width:20%; padding-right: 15px;" src="./static/images/clemson.jpg"> </a>
-          </div>
-
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="https://www.sciencedirect.com/science/article/pii/S1093968726031117/pdfft?md5=e938bb1a4863999573698c8be612eb7a&pid=1-s2.0-S1093968726031117-main.pdf"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <!-- Video Link. 
-              <span class="link-block">
-                <a href="https://youtu.be/xvFZjo5PgG0?si=GFreULeA1uF8r6fk"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>-->
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/omaralvarez/NeVF"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
-              </span>
-              <!-- Dataset Link. 
-              <span class="link-block">
-                <a href="https://github.com/TUM-AVS/paper-website-project"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Data</span>
-                  </a>-->
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-        <img src="./static/images/highlevelover_3D.jpg"
-                 class="teaser-image"
-                />
-        <!-- You can also add a video as a teaser -->
-        <!--
-        <video id="teaser" autoplay muted loop playsinline height="100%">
-            <source src="./static/images/teaser.jpg"
-                    type="video/mp4">
-        </video> 
-        -->
-      <h2 class="subtitle has-text-centered">
-        System overview of the proposed image volume sampling and compression framework.
-      </h2>
-    </div>
-  </div>
-</section>
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/les.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Original LES dataset.
-      </h2>
-    </div>
-  </div>
-</section>
-
-
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Computational Fluid Dynamics (CFD) simulations of civil engineering aerodynamics, which are commonly characterized by complex three-dimensional flow fields, generate massive spatiotemporal datasets, creating significant storage and computational bottlenecks that heavily constrain iterative engineering workflows. To overcome these challenges, this paper presents a novel two-stage compression framework that models three-dimensional flow field data using Neural Flow Volume Fields (NeVF). The first stage employs a distance field-biased flow importance sampling (3D BiFIS) strategy to reduce data dimensionality intelligently; this approach selectively extracts key near-wall flow information, guided by surface proximity to construct a “relaxed” image volume. Subsequently, a deep network, leveraging positional encodings and disentangled spatio-temporal attention mechanisms, highly compresses this volumetric representation. The effectiveness of the resulting flow field representation is evaluated using a comprehensive 3D Large-Eddy Simulation (LES) dataset of a bluff single-box bridge deck, characterized by complex, uncorrelated spanwise flow features. Results demonstrate high data compression rates of 7000:1 to 30000:1 while preserving high-fidelity near-body aerodynamic flow features, enabling accurate estimation of wind-induced forces. Ultimately, our methodology streamlines efficient storage, reconstruction, and rapid analysis of exascale CFD datasets, unlocking potential new applications for deep learning emulation and data-intensive tasks, such as, uncertainty quantification and flow-driven aero-structural optimization.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
-
-    <!-- Paper video. 
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        
-        <h2 class="title is-3">Video</h2>
-        <div class="content has-text-justified">
-          <p>
-            You can add an explanation Youtube video of your paper here!
-          </p>
-        </div>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/r7jcbH5vq-g?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>-->
-    <!--/ Paper video. -->
-  </div>
-</section>
-
-<!--
-<section class="hero is-light">
+  <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
-          <div class="item item-video0 has-text-centered">
-            <h3 class="title is-3">Try it for yourself</h3>
-            <video poster="" id="video0" autoplay controls muted loop playsinline center width="70%">
-              
-              <source src="static/videos/tryout.mp4"
-              type="video/mp4">
-            </video>
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">NeVF: Representing CFD simulations as neural flow volume fields for
+              efficient compression, reconstruction, and analysis</h1>
+            <h1 style="font-size:1.5rem"> Computer-Aided Civil and Infrastructure Engineering</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://omaralv.com">Omar A. Mures</a><sup>1,2</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <span class="author-block">
+                <a href="https://mcidmontoya.com/">Miguel Cid Montoya</a><sup>3</sup>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Universidade da Coru&ntilde;a</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <span class="author-block"><sup>2</sup>CITIC</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <span class="author-block"><sup>2</sup>Clemson University</span>
+            </div>
+
+            <div class="is-size-5 publication-authors" style="position: relative; z-index: -1;">
+              <sup>1</sup> <a href="https://www.udc.gal/"><img
+                  style="width:30%; margin-top: clamp(-160px, -10vw, 0px); vertical-align: middle; padding-right: 15px;"
+                  src="./static/images/udc.jpg"> </a>
+              <sup>2</sup> <a href="https://citic.udc.es/"><img style="width:20%; padding-right: 15px;"
+                  src="./static/images/citic.jpg"> </a>
+              <sup>3</sup> <a href="https://www.clemson.edu/"><img style="width:20%; padding-right: 15px;"
+                  src="./static/images/clemson.jpg"> </a>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://www.sciencedirect.com/science/article/pii/S1093968726031117/pdfft?md5=e938bb1a4863999573698c8be612eb7a&pid=1-s2.0-S1093968726031117-main.pdf"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/omaralvarez/NeVF"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
           </div>
-            <p style="text-align: center;">
-              Check the tutorial about how to start to build paper website for yourself:
-              <i class="fab fa-github"><a class="icon-link" href="https://github.com/TUM-AVS/paper-website-project" class="external-link"></a></i>
-              <a href="https://github.com/TUM-AVS/paper-website-project">Tutorial </a>
-            </p>
-            <br>
-              <center>
-                <code class="column is-three-fifths hero is-dark" style="text-align: left;">
-                  git clone https://github.com/TUM-AVS/paper-website-project.git<br>
-                  cd paper-website-project<br>
-                  etc.<br>
-                  <br>
-                  <br>
-                </code>
-                <br>
-                Other <a href="https://github.com/TUM-AVS/paper-website-project">code</a> instructions:
-                <code class="column is-three-fifths hero is-dark" style="text-align: left;">
-                  etc.<br>
-                </code>
-                <br>
-              </center>
+        </div>
       </div>
     </div>
-  </section>-->
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="./static/images/highlevelover_3D.jpg" class="teaser-image"
+          style="width: 120%; max-width: 120%; display: block; margin: 0 -10%;" />
+        <h2 class="subtitle has-text-centered">
+          System overview of the proposed image volume sampling and compression framework.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video id="teaser" autoplay muted loop playsinline style="width: 95%; display: block; margin: 0 auto;">
+          <source src="./static/videos/les.mp4" type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          Original LES dataset.
+        </h2>
+      </div>
+    </div>
+  </section>
 
 
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="./static/images/surfaces.jpg" class="teaser-image"
+          style="width: 120%; max-width: 100%; display: block; margin: 0 2.5%;" />
+        <h2 class="subtitle has-text-centered">
+          Compression and reconstruction results for surface pressures.
+        </h2>
+      </div>
+    </div>
+  </section>
 
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Computational Fluid Dynamics (CFD) simulations of civil engineering aerodynamics, which are commonly
+              characterized by complex three-dimensional flow fields, generate massive spatiotemporal datasets, creating
+              significant storage and computational bottlenecks that heavily constrain iterative engineering workflows.
+              To overcome these challenges, this paper presents a novel two-stage compression framework that models
+              three-dimensional flow field data using Neural Flow Volume Fields (NeVF). The first stage employs a
+              distance field-biased flow importance sampling (3D BiFIS) strategy to reduce data dimensionality
+              intelligently; this approach selectively extracts key near-wall flow information, guided by surface
+              proximity to construct a “relaxed” image volume. Subsequently, a deep network, leveraging positional
+              encodings and disentangled spatio-temporal attention mechanisms, highly compresses this volumetric
+              representation. The effectiveness of the resulting flow field representation is evaluated using a
+              comprehensive 3D Large-Eddy Simulation (LES) dataset of a bluff single-box bridge deck, characterized by
+              complex, uncorrelated spanwise flow features. Results demonstrate high data compression rates of 7000:1 to
+              30000:1 while preserving high-fidelity near-body aerodynamic flow features, enabling accurate estimation
+              of wind-induced forces. Ultimately, our methodology streamlines efficient storage, reconstruction, and
+              rapid analysis of exascale CFD datasets, unlocking potential new applications for deep learning emulation
+              and data-intensive tasks, such as, uncertainty quantification and flow-driven aero-structural
+              optimization.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
 
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Evaluation</h2>
+          <div class="hero-body">
+            <img src="./static/images/evaluation.jpg" class="teaser-image"
+              style="width: 130%; max-width: 130%; display: block; margin: 0 -15%;" />
+            <h2 class="subtitle has-text-centered">
+              Comparison against other SoTA methods.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@Article{mures2026nevf,
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@Article{mures2026nevf,
   author = {Mures, Omar A. and Cid Montoya, Miguel},
-  title = {{NeVF: Representing} CFD simulations as neural flow volume fields for efficient compression, reconstruction, and analysis},
+  title = {{NeVF: Representing CFD} simulations as neural flow volume fields for efficient compression, reconstruction, and analysis},
   journal = {Computer-Aided Civil and Infrastructure Engineering},
   volume = {49},
   pages = {100125},
@@ -244,38 +205,41 @@
   doi = {10.1016/j.cacaie.2026.100125},
   url = {https://doi.org/10.1016/j.cacaie.2026.100125},
 }</code></pre>
-  </div>
-</section>
+      </div>
+    </section>
 
 
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link" href="https://nevf-cfd.github.io/">
-          <i class="fas fa-home"></i>
-      </a>
-      <a class="icon-link"
-         href="https://www.sciencedirect.com/science/article/pii/S1093968726031117/pdfft?md5=e938bb1a4863999573698c8be612eb7a&pid=1-s2.0-S1093968726031117-main.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/omaralvarez/NeVF" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <center><p>
-            This website (<a href="https://github.com/paper-website/paper-website.github.io">source code</a>) was adapted from the popular <a
-            href="https://nerfies.github.io">Nerfies</a> project page and is licensed under a <br><a rel="license"
-            href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p></center>
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <a class="icon-link" href="https://nevf-cfd.github.io/">
+            <i class="fas fa-home"></i>
+          </a>
+          <a class="icon-link"
+            href="https://www.sciencedirect.com/science/article/pii/S1093968726031117/pdfft?md5=e938bb1a4863999573698c8be612eb7a&pid=1-s2.0-S1093968726031117-main.pdf">
+            <i class="fas fa-file-pdf"></i>
+          </a>
+          <a class="icon-link" href="https://github.com/omaralvarez/NeVF" class="external-link" disabled>
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <center>
+                <p>
+                  This website (<a href="https://github.com/paper-website/paper-website.github.io">source code</a>) was
+                  adapted from the popular <a href="https://nerfies.github.io">Nerfies</a> project page and is licensed
+                  under a <br><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                    Commons Attribution-ShareAlike 4.0 International License</a>.
+                </p>
+              </center>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</footer>
+    </footer>
 
 </body>
+
 </html>
