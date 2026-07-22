@@ -3,11 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Neural representations for CFD simulation compression.">
+  <meta name="description" content="CFD image sampling algorithm.">
   <meta name="keywords" content="Paper, website">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NeVF: Representing CFD simulations as neural flow volume fields for efficient compression, reconstruction, and
-    analysis</title>
+  <title>FABaS: Flow activity-biased importance sampling for deep learning image-based flow compression and prediction</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -42,19 +41,51 @@
 
 <body>
 
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href=https://www.omaralv.com>
+        <span class="icon">
+            <i class="fas fa-home"></i>
+        </span>
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://nevf-cfd.github.io/">
+              NeVF: CFD neural compression
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">NeVF: Representing CFD simulations as neural flow volume fields for
-              efficient compression, reconstruction, and analysis</h1>
-            <h1 style="font-size:1.5rem"> Computer-Aided Civil and Infrastructure Engineering</h1>
+            <h1 class="title is-1 publication-title">FABaS: Flow activity-biased importance sampling for deep learning image-based flow compression and prediction</h1>
+            <h1 style="font-size:1.5rem">Journal of Wind Engineering and Industrial Aerodynamics</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href="https://omaralv.com">Omar A. Mures</a><sup>1,2</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <span class="author-block">
                 <a href="https://mcidmontoya.com/">Miguel Cid Montoya</a><sup>3</sup>
+              <span class="author-block">
+                <a href="https://es.linkedin.com/in/abrahandopazo/">Abrahan Dopazo</a><sup>3</sup>
             </div>
 
             <div class="is-size-5 publication-authors">
@@ -77,7 +108,7 @@
               <div class="publication-links">
                 <!-- DOI Link. -->
                 <span class="link-block">
-                  <a href="https://doi.org/10.1016/j.cacaie.2026.100125"
+                  <a href="https://doi.org/10.1016/j.jweia.2026.106544"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-book"></i>
@@ -87,7 +118,7 @@
                 </span>
                 <!-- PDF Link. -->
                 <span class="link-block">
-                  <a href="https://www.sciencedirect.com/science/article/pii/S1093968726031117/pdfft?md5=e938bb1a4863999573698c8be612eb7a&pid=1-s2.0-S1093968726031117-main.pdf"
+                  <a href="https://www.sciencedirect.com/science/article/pii/S0167610526002138/pdfft?md5=e9faeb36380fdbb06473eee686b1267f&pid=1-s2.0-S0167610526002138-main.pdf"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -97,22 +128,22 @@
                 </span>
                 <!-- Code Link. -->
                 <span class="link-block">
-                  <a href="https://github.com/omaralvarez/NeVF"
+                  <a href="https://github.com/omaralvarez/FABaS"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
-                    <span>Code</span>
+                    <span>Code (Coming Soon)</span>
                   </a>
                 </span>
                 <!-- Colab Link. -->
                 <span class="link-block">
-                  <a href="https://colab.research.google.com/drive/17gbHzfWKct0r8XctirKBpJhCVFpNQNHL?usp=sharing"
+                  <a href=""
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-rocket"></i>
                     </span>
-                    <span>Colab</span>
+                    <span>Colab (Coming Soon)</span>
                   </a>
                 </span>
               </div>
@@ -127,10 +158,10 @@
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
-        <img src="./static/images/highlevelover_3D.jpg" class="teaser-image"
+        <img src="./static/images/FABaS.jpg" class="teaser-image"
           style="width: 110%; max-width: 110%; display: block; margin: 0 -5%;" />
         <h2 class="subtitle has-text-centered">
-          System overview of the proposed image volume sampling and compression framework.
+          System overview of the proposed image sampling and compression framework.
         </h2>
       </div>
     </div>
@@ -140,10 +171,10 @@
     <div class="container is-max-desktop">
       <div class="hero-body">
         <video id="teaser" autoplay muted loop playsinline style="width: 95%; display: block; margin: 0 auto;">
-          <source src="./static/videos/les.mp4" type="video/mp4">
+          <source src="./static/videos/urans.mp4" type="video/mp4">
         </video>
         <h2 class="subtitle has-text-centered" style="margin-top: 0.65rem;">
-          Original LES dataset.
+          Original URANS dataset.
         </h2>
       </div>
     </div>
@@ -170,23 +201,18 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Computational Fluid Dynamics (CFD) simulations of civil engineering aerodynamics, which are commonly
-              characterized by complex three-dimensional flow fields, generate massive spatiotemporal datasets, creating
-              significant storage and computational bottlenecks that heavily constrain iterative engineering workflows.
-              To overcome these challenges, this paper presents a novel two-stage compression framework that models
-              three-dimensional flow field data using Neural Flow Volume Fields (NeVF). The first stage employs a
-              distance field-biased flow importance sampling (3D BiFIS) strategy to reduce data dimensionality
-              intelligently; this approach selectively extracts key near-wall flow information, guided by surface
-              proximity to construct a “relaxed” image volume. Subsequently, a deep network, leveraging positional
-              encodings and disentangled spatio-temporal attention mechanisms, highly compresses this volumetric
-              representation. The effectiveness of the resulting flow field representation is evaluated using a
-              comprehensive 3D Large-Eddy Simulation (LES) dataset of a bluff single-box bridge deck, characterized by
-              complex, uncorrelated spanwise flow features. Results demonstrate high data compression rates of 7000:1 to
-              30000:1 while preserving high-fidelity near-body aerodynamic flow features, enabling accurate estimation
-              of wind-induced forces. Ultimately, our methodology streamlines efficient storage, reconstruction, and
-              rapid analysis of exascale CFD datasets, unlocking potential new applications for deep learning emulation
-              and data-intensive tasks, such as, uncertainty quantification and flow-driven aero-structural
-              optimization.
+              Flow field compression is a key milestone for the feasible implementation of deep learning (DL) models at scale and the 
+              efficient storage of the flow datasets required for their training. Sampling strategies represent a fundamental step in 
+              vision-based compression techniques, directly conditioning both model accuracy and compression ratios. Their 
+              main objective is to accurately capture all necessary flow features for reproducing the phenomena of interest, 
+              which typically involves extracting wind-induced forces while simultaneously resolving flow characteristics in the near 
+              and far wakes. However, accurately identifying flow information in those regions requires conflicting sampling criteria. 
+              To address this challenge, this study proposes an importance sampling strategy guided by flow activity to automatically identify 
+              and focus on high-activity regions within the flow domain, combining Signed Distance Functions (SDFs) and vorticity fields. 
+              The proposed Flow Activity-Based Importance Sampling (FABaS) method achieves near-lossless compression ratios of 37718:1 while 
+              guaranteeing accurate reproduction of flow features, with a Mean Absolute Percentage Error (MAPE) of 0.063&#37;, for precise surface 
+              force extraction in the boundary layer region and far wake. Consequently, this technique is a powerful tool for deep learning 
+              compression and prediction of flow field data.
             </p>
           </div>
         </div>
@@ -215,16 +241,16 @@
     <section class="section" id="BibTeX">
       <div class="container is-max-desktop content">
         <h2 class="title">BibTeX</h2>
-        <pre><code>@Article{mures2026nevf,
-  author = {Mures, Omar A. and Cid Montoya, Miguel},
-  title = {{NeVF: Representing CFD} simulations as neural flow volume fields for efficient compression, reconstruction, and analysis},
-  journal = {Computer-Aided Civil and Infrastructure Engineering},
-  volume = {49},
-  pages = {100125},
-  year = {2026},
-  doi = {10.1016/j.cacaie.2026.100125},
-  url = {https://doi.org/10.1016/j.cacaie.2026.100125},
-}</code></pre>
+        <pre><code>@Article{mures2026flow,
+          author = {Mures, Omar A. and Dopazo, Abrahan and Cid Montoya, Miguel},
+          title = {FABaS: Flow activity-biased importance sampling for deep learning image-based flow compression and prediction},
+          journal = {Journal of Wind Engineering and Industrial Aerodynamics},
+          volume = {277},
+          pages = {106544},
+          year = {2026},
+          doi = {10.1016/j.jweia.2026.106544},
+          url = {https://doi.org/10.1016/j.jweia.2026.106544}
+        }</code></pre>
       </div>
     </section>
 
@@ -232,14 +258,14 @@
     <footer class="footer">
       <div class="container">
         <div class="content has-text-centered">
-          <a class="icon-link" href="https://nevf-cfd.github.io/">
+          <a class="icon-link" href="https://fabas-sampling.github.io/">
             <i class="fas fa-home"></i>
           </a>
           <a class="icon-link"
-            href="https://www.sciencedirect.com/science/article/pii/S1093968726031117/pdfft?md5=e938bb1a4863999573698c8be612eb7a&pid=1-s2.0-S1093968726031117-main.pdf">
+            href="https://www.sciencedirect.com/science/article/pii/S0167610526002138/pdfft?md5=e9faeb36380fdbb06473eee686b1267f&pid=1-s2.0-S0167610526002138-main.pdf">
             <i class="fas fa-file-pdf"></i>
           </a>
-          <a class="icon-link" href="https://github.com/omaralvarez/NeVF" class="external-link" disabled>
+          <a class="icon-link" href="https://github.com/omaralvarez/FABaS" class="external-link" disabled>
             <i class="fab fa-github"></i>
           </a>
         </div>
